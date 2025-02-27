@@ -61,6 +61,9 @@ kable(head(mtcars, n = 5), digits = 3, format = "markdown")
 ```
 
 
+> "Love is patient. Love is kind."
+>
+> 1 Corinthians 13:4
 
 
 
