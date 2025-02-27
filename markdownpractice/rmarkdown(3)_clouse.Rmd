@@ -3,36 +3,77 @@ title: "rmarkdown(3)"
 author: "Katie Clouse"
 date: "2025-02-26"
 output: 
+  md_document:
+    variant: gfm
   html_document:
     toc: true
     toc_float: true
-  md_document:
-    variant: gfm
   word_document:
   pdf_document:
     
 ---
-
+This is an example or R code.
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
+library(knitr)
+library(ggplot2)
+library(rmarkdown)
+# this is R code
+summary(mtcars)
 ```
 
-## R Markdown
-
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
-
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
-
-```{r cars}
-summary(cars)
+This is how to include figures
+```{r}
+data("mtcars")
+ggplot(mtcars, aes(x = wt, y = mpg)) +
+  geom_smooth(method= lm, se = FALSE)+
+  geom_point(aes(color = wt)) +
+  xlab("Weight")+
+  ylab("Miles per Gallon")+
+  scale_colour_gradient(low = "forestgreen", high = "black")
 ```
 
-## Including Plots
 
-You can also embed plots, for example:
 
-```{r pressure, echo=FALSE}
-plot(pressure)
-```
 
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+R markdown formatting options 
+
+# first level header 
+## Second level header
+**this text is italics**. One asterisk is italics and two on each side is to make the lettering bold
+### Third level header 
+
+
+1. one item # if you type a dash and then a space you create a list. 
+2.another item 
+    - one subitem 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
